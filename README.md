@@ -32,7 +32,7 @@ Crosswalk.
 
 The preprocessing code can be found in Low Visibility Road Conditions Simulations.ipynb
 
-## Experiment
+### Experiment
 
 we generated datasets that are simulations of rainy weather, foggy weather, dark environment, and bright environment for our experiments as they are common challenging driving conditions for individuals with impaired vision. The image distortions are simulated by blurring the pixels, altering brightness and situations, and adding randomized noises to the images.
 
@@ -41,4 +41,14 @@ we generated datasets that are simulations of rainy weather, foggy weather, dark
 We designed a 6-components experimental process that allows us to compare how a model trained by different images would respond to adverse driving conditions. For each component of the experiment, one or multiple types of distortion effect(s) are applied to the original training dataset. Component 1 contains the original training images and serves as the baseline for the experiment. Models trained in other components are compared to the baseline model. Component 2 comprises images with mixed distortion effects -- 20% original images, 20% rainy images, 20% foggy images, 20% dark images, and 20% bright images. Components 3 to 6 comprise images with only one distortion effect, where rainy, foggy, dark, and bright effects were applied separately to the original training images. Then, all training images are normalized prior to training. We then trained a LeNet model for each component and tested them on six testing datasets -- original, rain, fog, dark, bright, and mixed (same effects breakdown as the mixed training dataset). Each experiment component would output six AUC scores corresponding to each testing dataset, and the model performance is evaluated by comparing average AUC scores across different components.
 
 <img width="778" alt="Screen Shot 2022-04-15 at 7 54 39 PM" src="https://user-images.githubusercontent.com/89416055/163653449-3fb17074-fd76-419c-8e54-b37418661e84.png">
+
+### Conclusion
+
+After extensive model testing in different low visibility scenarios, we found that LeNet (batch size 200, epochs 20, learning rate 0.001) is the best performing model and is trained on the dark dataset which consistently classifies road signs with an average AUC score of 0.758. Therefore, the takeaway of our project is that to maximize the performance of street sign classification across all conditions it is most beneficial to train on a nighttime dataset.
+
+#### limitations and suggestions for references
+
+The dataset we used is imbalanced as 55% of the dataset consists of speed limit signs and only 0.5% of the dataset consist of traffic light images. As a result, our model performed poorly in classifying under-representative classes. Moreover, our simulated images may not accurately reflect the real-world circumstances perceived through the camera and only cover some of the adverse driving conditions that drivers can possibly encounter. How close the simulated images can imitate the real world will significantly affect the performance of our neural network if applied to real settings.
+
+For future work, we recommend collecting more images of stop signs, crosswalk signs, and traffic lights. We suggest training the model with a more balanced dataset, so that the classifier could recognize underrepresented classes more accurately. If possible, repeat our experimental procedure on real-life images instead of simulated images to investigate what kinds of training data would be most helpful in terms of boosting classifier accuracy on low visibility road sign images. 
 
