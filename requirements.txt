@@ -1,3 +1,10 @@
 opencv-python
 pandas
 Pillow
+kaggle
+tensorflow
+seaborn
+sklearn
+matplotlib
+torch
+torchvision
