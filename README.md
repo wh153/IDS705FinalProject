@@ -33,7 +33,7 @@ Stop;
 Speedlimit;
 Crosswalk.
 
-The preprocessing code can be found in Low Visibility Road Conditions Simulations.ipynb
+The preprocessing code can be found in 10_code/Low Visibility Road Conditions Simulations.ipynb
 
 ### Experiment
 
