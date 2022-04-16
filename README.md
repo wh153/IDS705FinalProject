@@ -7,7 +7,7 @@ In order to run and replicate our project, run IDS705FinalNotebook.ipynb. We rec
 To install all dependencies, run pip install -r requirements.txt. 
 
 Prior to running the code please add your own Kaggle.json file to the same folder as the ipynb file. The kaggle.json file can be obtained from the kaggle website.
-Refer to https://www.kaggle.com/docs/api under the Authentication section for more infor on how to get the kaggle.json file.
+Refer to https://www.kaggle.com/docs/api under the Authentication section for more info on how to get the kaggle.json file.
 
 ## Road Signs Classification for Extreme Driving Conditions
 
