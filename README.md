@@ -55,3 +55,4 @@ The dataset we used is imbalanced as 55% of the dataset consists of speed limit 
 
 For future work, we recommend collecting more images of stop signs, crosswalk signs, and traffic lights. We suggest training the model with a more balanced dataset, so that the classifier could recognize underrepresented classes more accurately. If possible, repeat our experimental procedure on real-life images instead of simulated images to investigate what kinds of training data would be most helpful in terms of boosting classifier accuracy on low visibility road sign images. 
 
+Link to demo video: https://www.youtube.com/watch?v=aE_gAPqHsCs
